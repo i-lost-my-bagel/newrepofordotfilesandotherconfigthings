@@ -1,0 +1,4 @@
+swaybg -i ~/Pictures/maybe.jpg &
+dunst &
+yambar &
+swayidle before-sleep 'swaylock -f -c 000000' &

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu>
+<menu id="root-menu" label="root-menu">
+	<menu id="Accessories" label="Accessories">
+		<item label="About Xfce" icon="org.xfce.about">
+			<action name="Execute"><command>xfce4-about</command></action>
+		</item>
+		<item label="Bulk Rename" icon="org.xfce.thunar">
+			<action name="Execute"><command>thunar --bulk-rename</command></action>
+		</item>
+		<item label="Neovim" icon="nvim">
+			<action name="Execute"><command>nvim</command></action>
+		</item>
+		<item label="Thunar File Manager" icon="org.xfce.thunar">
+			<action name="Execute"><command>thunar</command></action>
+		</item>
+		<item label="Yambar" icon="panel">
+			<action name="Execute"><command>yambar</command></action>
+		</item>
+	</menu> <!-- Accessories -->
+	<menu id="Development" label="Development">
+		<item label="CMake" icon="CMakeSetup">
+			<action name="Execute"><command>cmake-gui</command></action>
+		</item>
+	</menu> <!-- Development -->
+	<menu id="Games" label="Games">
+		<item label="Prism Launcher" icon="org.prismlauncher.PrismLauncher">
+			<action name="Execute"><command>prismlauncher</command></action>
+		</item>
+	</menu> <!-- Games -->
+	<menu id="Graphics" label="Graphics">
+		<item label="Inkscape" icon="org.inkscape.Inkscape">
+			<action name="Execute"><command>inkscape</command></action>
+		</item>
+	</menu> <!-- Graphics -->
+	<menu id="Internet" label="Internet">
+		<item label="Avahi SSH Server Browser" icon="network-wired">
+			<action name="Execute"><command>/usr/bin/bssh</command></action>
+		</item>
+		<item label="Avahi VNC Server Browser" icon="network-wired">
+			<action name="Execute"><command>/usr/bin/bvnc</command></action>
+		</item>
+		<item label="Firefox Web Browser" icon="firefox">
+			<action name="Execute"><command>/usr/lib/firefox/firefox</command></action>
+		</item>
+	</menu> <!-- Internet -->
+	<menu id="Multimedia" label="Multimedia">
+		<item label="PulseAudio Volume Control" icon="multimedia-volume-control">
+			<action name="Execute"><command>pavucontrol</command></action>
+		</item>
+		<item label="Qt V4L2 test Utility" icon="qv4l2">
+			<action name="Execute"><command>qv4l2</command></action>
+		</item>
+		<item label="Qt V4L2 video capture utility" icon="qvidcap">
+			<action name="Execute"><command>qvidcap</command></action>
+		</item>
+		<item label="Spotify" icon="spotify-client">
+			<action name="Execute"><command>spotify --uri=</command></action>
+		</item>
+	</menu> <!-- Multimedia -->
+	<menu id="Settings" label="Settings">
+		<item label="Customize Look and Feel" icon="preferences-desktop-theme">
+			<action name="Execute"><command>lxappearance</command></action>
+		</item>
+		<item label="File Manager Settings" icon="org.xfce.thunar">
+			<action name="Execute"><command>thunar-settings</command></action>
+		</item>
+		<item label="PulseAudio Volume Control" icon="multimedia-volume-control">
+			<action name="Execute"><command>pavucontrol</command></action>
+		</item>
+		<item label="Removable Drives and Media" icon="org.xfce.volman">
+			<action name="Execute"><command>thunar-volman-settings</command></action>
+		</item>
+		<item label="TLP UI" icon="preferences-system-power-management">
+			<action name="Execute"><command>/usr/bin/tlpui</command></action>
+		</item>
+	</menu> <!-- Settings -->
+	<menu id="System" label="System">
+		<item label="Avahi Zeroconf Browser" icon="network-wired">
+			<action name="Execute"><command>/usr/bin/avahi-discover</command></action>
+		</item>
+		<item label="dconf Editor" icon="ca.desrt.dconf-editor">
+			<action name="Execute"><command>dconf-editor</command></action>
+		</item>
+		<item label="Htop" icon="htop">
+			<action name="Execute"><command>htop</command></action>
+		</item>
+		<item label="kitty" icon="kitty">
+			<action name="Execute"><command>kitty</command></action>
+		</item>
+		<item label="nvtop" icon="nvtop">
+			<action name="Execute"><command>nvtop</command></action>
+		</item>
+		<item label="OpenJDK Java 17 Console" icon="java17-openjdk">
+			<action name="Execute"><command>/usr/lib/jvm/java-17-openjdk/bin/jconsole</command></action>
+		</item>
+		<item label="OpenJDK Java 17 Shell" icon="java17-openjdk">
+			<action name="Execute"><command>/usr/lib/jvm/java-17-openjdk/bin/jshell</command></action>
+		</item>
+		<item label="Thunar File Manager" icon="org.xfce.thunar">
+			<action name="Execute"><command>thunar</command></action>
+		</item>
+		<item label="UXTerm" icon="xterm-color_48x48">
+			<action name="Execute"><command>uxterm</command></action>
+		</item>
+		<item label="XTerm" icon="xterm-color_48x48">
+			<action name="Execute"><command>xterm</command></action>
+		</item>
+		<item label="Yambar" icon="panel">
+			<action name="Execute"><command>yambar</command></action>
+		</item>
+	</menu> <!-- System -->
+</menu> <!-- root-menu -->
+</openbox_menu>

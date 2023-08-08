@@ -1,0 +1,43 @@
+bar:
+  height: 30
+  location: top
+  background: 000000aa
+  left-spacing: 5
+  right-spacing: 5
+  margin: 10
+  font: Iosevka Nerd Font:pixelsize=12
+
+  right:
+    - network:
+        name: wlp3s0        
+        content:
+          string:
+            text: "󰖩  {ssid}"
+
+    - battery:
+        name: BAT0
+        content:
+          - string: {text: "  {capacity}%"}
+
+    - clock:
+        content:
+          string: 
+            text: "  {time}"
+
+  left:
+    - foreign-toplevel:
+        content:
+          map:
+            conditions:
+              #              ~activated:
+              # string:
+              #   margin: 5
+              #   text: "{app-id}: {title}"
+              minimized:
+                string:
+                  margin: 5
+                  text: "{app-id}: {title} |" 
+                    #        deco:
+                    #underline:
+                    # size: 2
+                    # color: 2596beff
