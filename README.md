@@ -23,3 +23,12 @@ Dependencies
 - [swww](https://github.com/Horus645/swww) (only if you want the wallpaper animated and no freebsd package just compile it yourself)
 - kitty
 - Cascadia Code
+
+## Applepad
+
+Dependencies
+- Cascadia Code
+- Iosevka Nerd Font
+- [diskspace](https://github.com/scriptingosx/diskspace)
+- skhd
+- yabai
