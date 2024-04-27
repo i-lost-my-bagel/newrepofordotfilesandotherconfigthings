@@ -92,7 +92,7 @@ sketchybar --add item clock right 			\
 			background.height=32		\
 			background.padding_right=0	\
 			background.padding_left=0	\
-			label.padding_right=10		\
+			label.padding_right=20		\
                         script="$PLUGIN_DIR/clock.sh"
 
 sketchybar --add item battery right			\
@@ -137,7 +137,7 @@ sketchybar --add item ram center 			\
 			background.height=32		\
 			background.padding_right=0	\
 			background.padding_left=0	\
-			script="$PLUGIN_DIR/ram.sh"	\	
+			script="$PLUGIN_DIR/ram.sh"	\
 			update_freq=30			\
 
 sketchybar --add item disk center 			\
@@ -146,16 +146,16 @@ sketchybar --add item disk center 			\
 			background.height=32		\
 			background.padding_right=0	\
 			background.padding_left=0	\
-			script="$PLUGIN_DIR/disk_space.sh"	\	
-			update_freq=30			\
+			script="$PLUGIN_DIR/disk_space.sh"	\
+			update_freq=30				\
 
-sketchybar --add item brightness center 			\
-	   --set brightness	icon=""			\
+sketchybar --add item backlight center 			\
+	   --set backlight	icon=""			\
 			background.color=0xff47baea	\
 			background.height=32		\
 			background.padding_right=0	\
 			background.padding_left=0	\
-			script="$PLUGIN_DIR/backlight.sh"	\	
-			update_freq=30			\
+			script="$PLUGIN_DIR/backlight.sh"	\
+	   --subscribe	backlight brightness_change	\
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
