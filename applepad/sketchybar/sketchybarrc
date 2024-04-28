@@ -128,7 +128,7 @@ sketchybar --add item cpu center			\
 			background.height=32		\
 			background.padding_right=0	\
 			background.padding_left=0	\
-			script="$PLUGIN_DIR/cpu.sh"	\	
+			script="$PLUGIN_DIR/cpu.sh"	\
 			update_freq=30			\
 
 sketchybar --add item ram center 			\
