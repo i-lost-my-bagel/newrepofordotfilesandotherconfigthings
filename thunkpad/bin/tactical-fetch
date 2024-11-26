@@ -1,0 +1,14 @@
+#!/bin/bash
+
+ACTIVE_WORKSPACE=$(swaymsg -t get_workspaces | jq '.[] | select(.focused==true) | .num')
+
+sway for_window [workspace=80085 app_id="kitty"] floating enable
+sway for_window [workspace=80085 app_id="kitty"] resize set width 898 px
+sway for_window [workspace=80085 app_id="kitty"] resize set height 450 px
+
+swaymsg workspace 80085
+
+sleep 1
+kitty ~/.local/bin/tactical-neofetch-launcher.sh
+
+swaymsg workspace $ACTIVE_WORKSPACE
