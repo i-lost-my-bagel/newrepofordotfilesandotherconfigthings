@@ -8,9 +8,9 @@
     "margin-right": 10,
     "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": [ "tray", "sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media", "sway/window" ],
+    "modules-left": [ "tray", "sway/workspaces", "sway/mode", "sway/scratchpad", "custom/musicplayer-previous-button", "custom/musicplayer-play-button", "custom/musicplayer-next-button", "custom/musicplayer" ],
     "modules-center": ["cpu", "memory", "backlight", "disk", "temperature"],
-    "modules-right": ["custom/powerprofiles", "pulseaudio", "network", "battery", "clock"],
+    "modules-right": ["custom/powerprofiles", "pulseaudio", "network", "battery", "custom/wattage", "clock", "custom/swatch"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -88,7 +88,7 @@
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
+        "timezone": "America/New_York",
 	"format": "󱑍  {:%I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
@@ -125,7 +125,13 @@
         "format-alt": "{icon} {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": [" ", " ", " ", " ", " "]
+        "format-icons": [" ", " ", " ", " ", " "],
+	"weighted-average": true
+    },
+    "custom/wattage": {
+	"format": "{}",
+	"exec": "wattage.sh",
+	"interval": 5
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -151,7 +157,8 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle"
+        "on-click": "pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle",
+		"on-click-right": "pavucontrol"
     },
     "custom/media": {
         "format": "{icon} {}",
@@ -165,6 +172,36 @@
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
+	"custom/musicplayer": {
+		"format": "{}",
+		"max-length": 50,
+		"exec": "$HOME/.config/waybar/musicplayer.sh get-track 2> /dev/null",
+		"on-click": "$HOME/.config/waybar/musicplayer.sh pick-player 2> /dev/null 1> /dev/null",
+		"signal": 9,
+		"interval": 5
+	},
+	"custom/musicplayer-play-button": {
+		"format": "{}",
+		"max-length": 50,
+		"exec": "$HOME/.config/waybar/musicplayer.sh state 2> /dev/null",
+		"on-click": "$HOME/.config/waybar/musicplayer.sh play-pause 2> /dev/null; pkill -SIGRTMIN+9 waybar",
+		"signal": 9,
+		"interval": 5
+	},
+	"custom/musicplayer-previous-button": {
+		"format": "󰒮",
+		"max-length": 50,
+		"on-click": "$HOME/.config/waybar/musicplayer.sh previous 2> /dev/null; pkill -SIGRTMIN+9 waybar",
+		"signal": 9,
+		"interval": 5
+	},
+	"custom/musicplayer-next-button": {
+		"format": "󰒭",
+		"max-length": 50,
+		"on-click": "$HOME/.config/waybar/musicplayer.sh next 2> /dev/null; pkill -SIGRTMIN+9 waybar",
+		"signal": 9,
+		"interval": 5
+	},
     "disk": {
         "interval": 30,
         "format": "󰋊 {free}",
@@ -173,9 +210,14 @@
     "custom/powerprofiles": {
 	"format": "{}",
 	"exec": "/bin/timeout 1s /bin/powerprofilesctl get",
-	"interval": 5,
+	/* "interval": 5, */
 	"signal": 8,
 	"on-click": "~/.local/bin/powertoggle.sh"
+    },
+    "custom/swatch": {
+	"format": "@{} .beats",
+	"exec": "~/.local/bin/swatchtime/swatchtime.py -f {beat} 2> /dev/zero",
+	"interval": 5
     }
 }
 
