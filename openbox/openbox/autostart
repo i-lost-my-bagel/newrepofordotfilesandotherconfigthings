@@ -1,0 +1,33 @@
+# Enables mouse tap to click
+xinput set-prop 10 322 1 &
+
+# Compositing
+picom &
+
+# Screensaver and lock screen
+xscreensaver --no-splash &
+
+# Wallpaper
+#nitrogen --restore &
+xgifwallpaper ~/Pictures/Wallpapers/tenor.gif &
+
+# Bar
+polybar &
+
+# Notification center and hot corners
+# deadd-notification-center &
+# lead &
+dunst &
+
+# Trackpad gestures
+kill -9 $(ps -ax | grep  'python3 /sbin/libinput-gestures' | grep -v grep | awk '{print $1;}')
+libinput-gestures &
+
+# Clipboard manager
+greenclip daemon &
+
+# Polkit
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# don't show mouse when touch screen
+unclutter --hide-on-touch
